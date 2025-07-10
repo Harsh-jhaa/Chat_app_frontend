@@ -69,7 +69,7 @@ const SignupPage = () => {
                     <input
                       type='text'
                       placeholder='Meow Mosi'
-                      className='input input-bordered w-full hover:ring-2 hover:ring-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.7)] focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-primary focus:shadow-lg placeholder:text-sm placeholder:opacity-70'
+                      className='input input-bordered w-full input-glow placeholder:text-sm placeholder:opacity-70'
                       value={signupData.fullName}
                       onChange={(e) =>
                         setSignupData({
@@ -89,7 +89,7 @@ const SignupPage = () => {
                       type='email'
                       placeholder='meow@gmail.com'
                       className='input input-bordered w-full 
-                      hover:ring-2 hover:ring-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.7)] focus:outline-none transition-all duration-250 focus:ring-2 focus:ring-primary focus:shadow-lg placeholder:text-sm placeholder:opacity-70'
+                     input-glow placeholder:text-sm placeholder:opacity-70'
                       value={signupData.email}
                       onChange={(e) =>
                         setSignupData({
@@ -109,7 +109,7 @@ const SignupPage = () => {
                       type='password'
                       placeholder='********'
                       className='input input-bordered w-full 
-                      hover:ring-2 hover:ring-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.7)] focus:outline-none transition-all duration-250 focus:ring-2 focus:ring-primary focus:shadow-lg placeholder:text-sm placeholder:opacity-70'
+                      input-glow placeholder:text-sm placeholder:opacity-70'
                       value={signupData.password}
                       onChange={(e) =>
                         setSignupData({
@@ -147,7 +147,7 @@ const SignupPage = () => {
                   </div>
                 </div>
                 <button
-                  className='btn btn-primary w-full hover:ring-2 hover:ring-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.7)] focus:outline-none transition-all duration-250 focus:ring-2 focus:ring-primary focus:shadow-lg  '
+                  className='btn btn-primary w-full input-glow  '
                   type='submit'
                 >
                   {isPending ? (
@@ -184,7 +184,7 @@ const SignupPage = () => {
               <img
                 src='/mainPage.png'
                 alt='Language Learning Illustration'
-                className='w-full h-full hover:scale-105 transition-transform duration-300 '
+                className='w-full h-full hover:scale-105 transition-transform duration-300 ease-in-out'
               />
             </div>
             <div className='text-center space-y-3 mt-6'>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import { Route, Routes, Navigate } from 'react-router';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -7,6 +8,7 @@ import CallPage from './pages/CallPage';
 import ChatPage from './pages/ChatPage';
 import HomePage from './pages/HomePage';
 import NotificationPage from './pages/NotificationPage';
+import Layout from './components/Layout';
 import PageLoader from './components/PageLoader';
 // import axiosInstance from './lib/axios';
 import { Toaster } from 'react-hot-toast';
@@ -14,6 +16,7 @@ import { Toaster } from 'react-hot-toast';
 // import { useQuery } from '@tanstack/react-query';
 // import { getAuthUser } from './lib/api';
 import useAuthUser from './hooks/useAuthUser';
+
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
 
@@ -31,7 +34,9 @@ const App = () => {
           path='/'
           element={
             isAuthenticated && isOnboarded ? (
-              <HomePage />
+              <Layout showSidebar={true}>
+                <HomePage />
+              </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? '/login' : '/onboarding'} />
             )
@@ -39,11 +44,23 @@ const App = () => {
         />
         <Route
           path='/login'
-          element={!isAuthenticated ? <LoginPage /> : <Navigate to='/' />}
+          element={
+            !isAuthenticated ? (
+              <LoginPage />
+            ) : (
+              <Navigate to={isOnboarded ? '/' : '/onboarding'} />
+            )
+          }
         />
         <Route
           path='/signup'
-          element={!isAuthenticated ? <SignupPage /> : <Navigate to='/' />}
+          element={
+            !isAuthenticated ? (
+              <SignupPage />
+            ) : (
+              <Navigate to={isOnboarded ? '/' : '/onboarding'} />
+            )
+          }
         />
         <Route
           path='/onboarding'

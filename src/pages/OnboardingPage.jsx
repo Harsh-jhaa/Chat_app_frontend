@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router';
 const OnboardingPage = () => {
   const { authUser } = useAuthUser();
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
+  
 
   const [formState, setFormState] = React.useState({
     fullName: authUser?.fullName || '',
