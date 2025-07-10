@@ -16,19 +16,21 @@ import { Toaster } from 'react-hot-toast';
 // import { useQuery } from '@tanstack/react-query';
 // import { getAuthUser } from './lib/api';
 import useAuthUser from './hooks/useAuthUser';
+import useThemeStore from './store/useThemeStore';
 
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
 
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = authUser?.isOnBoarded;
+  const { theme } = useThemeStore();
 
   if (isLoading) {
     return <PageLoader />;
   }
 
   return (
-    <div className='h-screen' data-theme='night'>
+    <div className='h-screen' data-theme={theme}>
       <Routes>
         <Route
           path='/'
