@@ -7,6 +7,7 @@ import {
   sendFriendRequest,
 } from '../lib/api';
 import { FriendCard, getLanguageFlag } from '../components/FriendCard';
+import { capitalize } from '../lib/utils';
 import {
   CheckCircleIcon,
   MapPinIcon,
@@ -180,5 +181,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
