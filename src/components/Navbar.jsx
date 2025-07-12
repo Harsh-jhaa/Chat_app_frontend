@@ -33,7 +33,7 @@ const Navbar = () => {
             </div>
           )}
 
-          <div className='flex items-center gap-3 sm:gap-4'>
+          <div className='flex items-center gap-3 sm:gap-4 ml-auto'>
             <Link to={'/notifications'}>
               <button className='btn btn-ghost btn-circle'>
                 <BellIcon className='h-6 w-6 text-base-content opacity-70' />
@@ -45,13 +45,17 @@ const Navbar = () => {
           {/* avatar button - only in the chat page */}
           <div className='avatar'>
             <div className='w-9 rounded-full'>
-              <img src={authUser?.profilePicture} alt='User Avatar' rel='noreferrer'/>
+              <img
+                src={authUser?.profilePicture}
+                alt='User Avatar'
+                rel='noreferrer'
+              />
             </div>
           </div>
 
           {/* logout button */}
-          <button className="btn btn-ghost btn-circle" onClick={logoutMutation}>
-            <LogOutIcon className='h-6 w-6 text-base-content opacity-70'/>
+          <button className='btn btn-ghost btn-circle' onClick={logoutMutation}>
+            <LogOutIcon className='h-6 w-6 text-base-content opacity-70' />
           </button>
         </div>
       </div>
